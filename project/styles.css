@@ -1,0 +1,71 @@
+/* Tipografía */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2 {
+    font-weight: 500;
+    color: #333;
+}
+
+/* Estilos de las tarjetas */
+.card {
+    background-color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    font-weight: 500;
+}
+
+/* Inputs */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos de la lista de resultados */
+#results {
+    padding-left: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Fondo */
+body.bg-light {
+    background-color: #f4f4f9 !important;
+}
+
+/* Espaciado para el contenedor */
+.container {
+    margin-top: 50px;
+}
