@@ -60,20 +60,21 @@ const firebaseConfig = {
   });
   
   // Enviar Respuesta
-  questionForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const answer = document.getElementById('answer').value;
-      db.collection('answers').add({
-          answer: answer,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-      })
-      .then(() => {
-          document.getElementById('answer').value = ''; // Limpiar campo
-      })
-      .catch((error) => {
-          console.error('Error al enviar respuesta: ', error);
-      });
-  });
+questionForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const answer = document.getElementById('answer').value;
+
+    try {
+        await db.collection('answers').add({
+            answer: answer,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        document.getElementById('answer').value = ''; // Limpiar campo
+    } catch (error) {
+        console.error('Error al enviar respuesta: ', error);
+    }
+});
+
   
   // Mostrar respuestas en tiempo real
   db.collection('answers').orderBy('timestamp').onSnapshot((snapshot) => {
