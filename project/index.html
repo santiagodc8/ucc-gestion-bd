@@ -36,11 +36,29 @@
             <h2 class="text-center mb-4">Responde la pregunta</h2>
             <form id="questionForm">
                 <div class="mb-3">
-                    <label for="answer" class="form-label">¿Cuál es tu lenguaje de programación favorito?</label>
-                    <input type="text" id="answer" class="form-control" placeholder="Tu respuesta aquí" required>
+                    <label for="favoriteLanguage" class="form-label">¿Cuál es tu lenguaje de programación favorito?</label>
+                    <select id="favoriteLanguage" class="form-select" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Python">Python</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="Java">Java</option>
+                        <option value="C++">C++</option>
+                        <option value="Otro">Otro</option>
+                    </select>
                 </div>
+
+                <div class="mb-3">
+                    <label for="experienceLevel" class="form-label">¿Cuál es tu nivel de experiencia en programación?</label>
+                    <select id="experienceLevel" class="form-select" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="Principiante">Principiante</option>
+                        <option value="Intermedio">Intermedio</option>
+                        <option value="Avanzado">Avanzado</option>
+                    </select>
+                </div>
+
                 <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-success">Enviar respuesta</button>
+                    <button type="submit" class="btn btn-success">Enviar respuestas</button>
                 </div>
             </form>
 
