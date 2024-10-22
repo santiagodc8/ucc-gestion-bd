@@ -1,96 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de Preguntas</title>
-    
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="bg-light">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="bg-light">
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Formulario de Preguntas</h1>
+      <h1 class="text-center mb-4">Formulario de Preguntas</h1>
 
-        <div id="login" class="card p-4 mx-auto" style="max-width: 400px;">
-            <h2 class="text-center">Iniciar Sesión</h2>
-            <div class="mb-3">
-                <input type="email" id="email" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="mb-3">
-                <input type="password" id="password" class="form-control" placeholder="Contraseña" required>
-            </div>
-            <div class="d-grid gap-2">
-                <button id="loginBtn" class="btn btn-primary">Iniciar Sesión</button>
-                <button id="signupModalBtn" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signupModal">Registrar</button>
-            </div>
+      <div id="login" class="card p-4 mx-auto" style="max-width: 400px">
+        <h2 class="text-center">Iniciar Sesión</h2>
+        <div class="mb-3">
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            placeholder="Email"
+            required
+          />
         </div>
-
-        <div id="form" class="card p-4 mx-auto mt-4" style="max-width: 600px; display:none;">
-            <h2 class="text-center mb-4">Responde la pregunta</h2>
-            <form id="questionForm">
-                <div class="mb-3">
-                    <label for="favoriteLanguage" class="form-label">¿Cuál es tu lenguaje de programación favorito?</label>
-                    <select id="favoriteLanguage" class="form-select" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="Python">Python</option>
-                        <option value="JavaScript">JavaScript</option>
-                        <option value="Java">Java</option>
-                        <option value="C++">C++</option>
-                        <option value="Otro">Otro</option>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="experienceLevel" class="form-label">¿Cuál es tu nivel de experiencia en programación?</label>
-                    <select id="experienceLevel" class="form-select" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="Principiante">Principiante</option>
-                        <option value="Intermedio">Intermedio</option>
-                        <option value="Avanzado">Avanzado</option>
-                    </select>
-                </div>
-
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-success">Enviar respuestas</button>
-                </div>
-            </form>
-
-            <h2 class="text-center mt-5">Respuestas en tiempo real</h2>
-            <ul id="results" class="list-group mt-3"></ul>
+        <div class="mb-3">
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Contraseña"
+            required
+          />
         </div>
+        <div class="d-grid gap-2">
+          <button id="loginBtn" class="btn btn-primary">Iniciar Sesión</button>
+          <button
+            id="signupModalBtn"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#signupModal"
+          >
+            Registrar
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="form"
+        class="card p-4 mx-auto mt-4"
+        style="max-width: 600px; display: none"
+      >
+        <h2 class="text-center mb-4">Responde la pregunta</h2>
+        <form id="questionForm">
+          <div class="mb-3">
+            <label for="favoriteLanguage" class="form-label"
+              >¿Cuál es tu lenguaje de programación favorito?</label
+            >
+            <select id="favoriteLanguage" class="form-select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Python">Python</option>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Java">Java</option>
+              <option value="C++">C++</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="experienceLevel" class="form-label"
+              >¿Cuál es tu nivel de experiencia en programación?</label
+            >
+            <select id="experienceLevel" class="form-select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Principiante">Principiante</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+            </select>
+          </div>
+
+          <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success">
+              Enviar respuestas
+            </button>
+          </div>
+        </form>
+
+        <h2 class="text-center mt-5">Respuestas en tiempo real</h2>
+        <ul id="results" class="list-group mt-3"></ul>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Lenguajes Favoritos</h3>
+              <canvas id="languageChart"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Niveles de Experiencia</h3>
+              <canvas id="experienceChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Modal de Registro -->
-    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signupModalLabel">Registrar nuevo usuario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="signupEmail" class="form-label">Email</label>
-                        <input type="email" id="signupEmail" class="form-control" placeholder="Tu email" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="signupPassword" class="form-label">Contraseña</label>
-                        <input type="password" id="signupPassword" class="form-control" placeholder="Tu contraseña" required>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" id="signupBtn" class="btn btn-primary">Registrar</button>
-                </div>
+    <div
+      class="modal fade"
+      id="signupModal"
+      tabindex="-1"
+      aria-labelledby="signupModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="signupModalLabel">
+              Registrar nuevo usuario
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="signupEmail" class="form-label">Email</label>
+              <input
+                type="email"
+                id="signupEmail"
+                class="form-control"
+                placeholder="Tu email"
+                required
+              />
             </div>
+            <div class="mb-3">
+              <label for="signupPassword" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                id="signupPassword"
+                class="form-control"
+                placeholder="Tu contraseña"
+                required
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button type="button" id="signupBtn" class="btn btn-primary">
+              Registrar
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Bootstrap JS -->
@@ -100,8 +187,9 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <!-- Custom Script -->
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
